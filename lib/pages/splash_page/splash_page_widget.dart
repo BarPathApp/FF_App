@@ -1,14 +1,10 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/permissions_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'splash_page_model.dart';
 export 'splash_page_model.dart';
 
@@ -80,7 +76,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
             'Bluetooth Demo',
             style: FlutterFlowTheme.of(context).titleLarge,
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
@@ -97,7 +93,7 @@ class _SplashPageWidgetState extends State<SplashPageWidget> {
                     color: FlutterFlowTheme.of(context).primaryBackground,
                   ),
                   child: Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Text(
                       'Fetching bluetooth status...',
                       style: FlutterFlowTheme.of(context).labelMedium,
