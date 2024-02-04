@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "828598227130",
+    "project_id": "b-l-e-io-t-marketplace-55x9n0",
+    "storage_bucket": "b-l-e-io-t-marketplace-55x9n0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828598227130:android:dc7cfe6d9afab5f312f283",
+        "android_client_info": {
+          "package_name": "com.mycompany.bleiotmarketplace"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp1mUwsGVMz3mpUe3G2A1nsLzrOIT3OSE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
