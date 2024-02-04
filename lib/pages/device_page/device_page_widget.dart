@@ -1,4 +1,3 @@
-import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -8,13 +7,9 @@ import '/flutter_flow/instant_timer.dart';
 import '/widgets/display_received_data/display_received_data_widget.dart';
 import '/widgets/strength_indicator/strength_indicator_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'device_page_model.dart';
 export 'device_page_model.dart';
 
@@ -52,7 +47,7 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
         _model.currentRssi = widget.deviceRssi;
       });
       _model.rssiUpdateTimer = InstantTimer.periodic(
-        duration: Duration(milliseconds: 2000),
+        duration: const Duration(milliseconds: 2000),
         callback: (timer) async {
           _model.updatedRssi = await actions.getRssi(
             BTDeviceStruct(
@@ -113,7 +108,7 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
                     child: Text(
                       widget.deviceName!,
                       style: FlutterFlowTheme.of(context).titleLarge.override(
@@ -145,7 +140,7 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
                 ],
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                 child: Text(
                   widget.deviceId!,
                   style: FlutterFlowTheme.of(context).labelSmall,
@@ -156,10 +151,10 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
           actions: [
             Container(
               height: 200.0,
-              decoration: BoxDecoration(),
+              decoration: const BoxDecoration(),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 children: [
@@ -193,7 +188,7 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
         body: SafeArea(
           top: true,
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -206,12 +201,12 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
                       ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
-                        child: Container(
+                        child: SizedBox(
                           width: double.infinity,
                           child: TextFormField(
                             controller: _model.textController,
@@ -260,13 +255,13 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
                       ),
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                            const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
                         child: FlutterFlowIconButton(
                           borderColor: Colors.transparent,
                           borderRadius: 30.0,
                           buttonSize: 50.0,
                           fillColor: FlutterFlowTheme.of(context).primary,
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.send_rounded,
                             color: Colors.white,
                             size: 24.0,
@@ -294,7 +289,7 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
                                             .primaryText,
                                       ),
                                 ),
-                                duration: Duration(milliseconds: 2000),
+                                duration: const Duration(milliseconds: 2000),
                                 backgroundColor:
                                     FlutterFlowTheme.of(context).success,
                               ),
@@ -306,53 +301,38 @@ class _DevicePageWidgetState extends State<DevicePageWidget> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
-                  child: InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      await SetRecord.collection.doc().set(createSetRecordData(
-                            data: _model.displayReceivedDataModel.data,
-                          ));
-                    },
-                    child: wrapWithModel(
-                      model: _model.displayReceivedDataModel,
-                      updateCallback: () => setState(() {}),
-                      child: DisplayReceivedDataWidget(
-                        device: BTDeviceStruct(
-                          name: widget.deviceName,
-                          id: widget.deviceId,
-                          rssi: widget.deviceRssi,
-                        ),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                  child: wrapWithModel(
+                    model: _model.displayReceivedDataModel,
+                    updateCallback: () => setState(() {}),
+                    child: DisplayReceivedDataWidget(
+                      device: BTDeviceStruct(
+                        name: widget.deviceName,
+                        id: widget.deviceId,
+                        rssi: widget.deviceRssi,
                       ),
                     ),
                   ),
                 ),
                 Align(
-                  alignment: AlignmentDirectional(1.0, 0.0),
+                  alignment: const AlignmentDirectional(1.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      await SetRecord.collection.doc().set({
-                        ...mapToFirestore(
-                          {
-                            'IMU_Data': [_model.displayReceivedDataModel.data],
-                          },
-                        ),
-                      });
+                      await actions.disconnectDevice(
+                        BTDeviceStruct(),
+                      );
                     },
                     text: 'Start Collection',
                     options: FFButtonOptions(
                       height: 40.0,
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
                       iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       color: FlutterFlowTheme.of(context).primary,
                       textStyle: FlutterFlowTheme.of(context).titleSmall,
                       elevation: 3.0,
-                      borderSide: BorderSide(
+                      borderSide: const BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

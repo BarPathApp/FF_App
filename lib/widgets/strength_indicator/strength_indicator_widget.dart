@@ -1,10 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'strength_indicator_model.dart';
 export 'strength_indicator_model.dart';
 
@@ -13,7 +9,7 @@ class StrengthIndicatorWidget extends StatefulWidget {
     super.key,
     required this.rssi,
     Color? color,
-  }) : this.color = color ?? const Color(0x7F39D2C0);
+  }) : color = color ?? const Color(0x7F39D2C0);
 
   final int? rssi;
   final Color color;
@@ -48,15 +44,15 @@ class _StrengthIndicatorWidgetState extends State<StrengthIndicatorWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: Padding(
-        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
+        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 4.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
               child: Container(
                 width: 4.0,
                 height: 7.0,
@@ -67,7 +63,7 @@ class _StrengthIndicatorWidgetState extends State<StrengthIndicatorWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
               child: Container(
                 width: 4.0,
                 height: 11.0,
@@ -84,7 +80,7 @@ class _StrengthIndicatorWidgetState extends State<StrengthIndicatorWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 2.0, 0.0),
               child: Container(
                 width: 4.0,
                 height: 14.0,

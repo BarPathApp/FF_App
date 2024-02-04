@@ -5,10 +5,6 @@ import '/flutter_flow/instant_timer.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'display_received_data_model.dart';
 export 'display_received_data_model.dart';
 
@@ -42,7 +38,7 @@ class _DisplayReceivedDataWidgetState extends State<DisplayReceivedDataWidget> {
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       _model.receivedDataTimer = InstantTimer.periodic(
-        duration: Duration(milliseconds: 1000),
+        duration: const Duration(milliseconds: 1000),
         callback: (timer) async {
           _model.receivedData = await actions.receiveData(
             widget.device!,
@@ -78,7 +74,7 @@ class _DisplayReceivedDataWidgetState extends State<DisplayReceivedDataWidget> {
               ),
         ),
         Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
           child: Text(
             valueOrDefault<String>(
               _model.data,

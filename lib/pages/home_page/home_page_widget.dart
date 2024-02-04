@@ -1,9 +1,7 @@
-import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/flutter_flow_widgets.dart';
 import '/widgets/empty_devices/empty_devices_widget.dart';
 import '/widgets/strength_indicator/strength_indicator_widget.dart';
 import '/custom_code/actions/index.dart' as actions;
@@ -11,9 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -21,7 +16,7 @@ class HomePageWidget extends StatefulWidget {
   const HomePageWidget({
     super.key,
     bool? isBTEnabled,
-  }) : this.isBTEnabled = isBTEnabled ?? false;
+  }) : isBTEnabled = isBTEnabled ?? false;
 
   final bool isBTEnabled;
 
@@ -129,12 +124,12 @@ class _HomePageWidgetState extends State<HomePageWidget>
             'Bluetooth Demo',
             style: FlutterFlowTheme.of(context).titleLarge,
           ),
-          actions: [],
+          actions: const [],
           centerTitle: true,
           elevation: 0.0,
         ),
         body: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
+          padding: const EdgeInsetsDirectional.fromSTEB(16.0, 10.0, 16.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -149,7 +144,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                   Switch.adaptive(
                     value: _model.switchValue ??= widget.isBTEnabled,
                     onChanged: (newValue) async {
-                      setState(() => _model.switchValue = newValue!);
+                      setState(() => _model.switchValue = newValue);
                     },
                     activeColor: FlutterFlowTheme.of(context).primary,
                     activeTrackColor: FlutterFlowTheme.of(context).accent1,
@@ -180,7 +175,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         CrossAxisAlignment.start,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 10.0, 0.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
@@ -215,7 +210,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             0.0, 16.0, 0.0, 0.0),
                                         child: Builder(
                                           builder: (context) {
@@ -224,8 +219,8 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     .toList();
                                             if (displayConnectedDevcies
                                                 .isEmpty) {
-                                              return Center(
-                                                child: Container(
+                                              return const Center(
+                                                child: SizedBox(
                                                   width: double.infinity,
                                                   height: 50.0,
                                                   child: EmptyDevicesWidget(
@@ -247,7 +242,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                     displayConnectedDevcies[
                                                         displayConnectedDevciesIndex];
                                                 return Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 12.0),
                                                   child: InkWell(
@@ -308,7 +303,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
+                                                            const EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     16.0,
                                                                     12.0,
@@ -338,7 +333,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                           .end,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           8.0,
@@ -376,7 +371,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                   ],
                                                                 ),
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                                  padding: const EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           5.0,
@@ -415,7 +410,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 50.0),
                                   child: SingleChildScrollView(
                                     child: Column(
@@ -425,7 +420,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                       children: [
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -511,15 +506,15 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                         ),
                                         Padding(
                                           padding:
-                                              EdgeInsetsDirectional.fromSTEB(
+                                              const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 16.0, 0.0, 0.0),
                                           child: Builder(
                                             builder: (context) {
                                               final displayDevices =
                                                   _model.foundDevices.toList();
                                               if (displayDevices.isEmpty) {
-                                                return Center(
-                                                  child: Container(
+                                                return const Center(
+                                                  child: SizedBox(
                                                     width: double.infinity,
                                                     height: 50.0,
                                                     child: EmptyDevicesWidget(
@@ -541,7 +536,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                           displayDevicesIndex];
                                                   return Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 12.0),
                                                     child: InkWell(
@@ -615,7 +610,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       16.0,
                                                                       12.0,
@@ -646,7 +641,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                             .end,
                                                                     children: [
                                                                       Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                                                             0.0,
                                                                             0.0,
                                                                             8.0,
@@ -684,7 +679,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                                     ],
                                                                   ),
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
+                                                                    padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             5.0,
@@ -732,9 +727,9 @@ class _HomePageWidgetState extends State<HomePageWidget>
                       Container(
                         width: double.infinity,
                         height: double.infinity,
-                        decoration: BoxDecoration(),
+                        decoration: const BoxDecoration(),
                         child: Align(
-                          alignment: AlignmentDirectional(0.0, 0.0),
+                          alignment: const AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             'Turn on bluetooth to connect with any device',
                             style: FlutterFlowTheme.of(context).labelMedium,
